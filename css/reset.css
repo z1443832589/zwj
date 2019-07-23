@@ -1,0 +1,95 @@
+html,
+body,
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+table,
+td{
+    margin:0;
+    padding:0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img{
+    border: 0;
+}
+
+body {
+    color: #333;
+    font-size:16px;
+	overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;
+}
+}
+ul,
+ol {
+    list-style-type: none;
+}
+
+select,
+input,
+img{
+    vertical-align: middle;
+}
+button,
+input{
+	outline: none;
+}
+
+p{
+    font-size:.14rem;
+}
+
+a {
+    color:#666;
+    text-decoration: none;
+}
+
+a:focus {
+    text-decoration: none;
+}
+.header{
+	background-color: #fafafa;
+	height: 3.125rem;
+	line-height: 3.125rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.header *{
+	margin: 0 0.625rem;
+}
+.header h1{
+	font-weight: 400;
+	font-size: 20px;
+}
+.header img:first-child{
+	width: 2.1875rem;
+	height: 2.1875rem;
+}
+.header img:last-child{
+	width: 0.9375rem;
+	height: 0.9375rem;
+}
+.succeed{
+	position: absolute;
+    top: 4rem;
+    left: 6rem;
+    color: green;
+}
+.error{
+	position: absolute;
+    top: 3.2rem;
+    left: 6rem;
+    color: orangered;
+}

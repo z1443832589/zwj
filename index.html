@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>狼人杀手游登录</title>
+	<script src="js/rem.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+</head>
+<body>
+	<header>
+		<div class="header">
+			<img src="img/logo.png" >
+			<h1>狼人杀首页</h1>
+			<img id="audio" src="img/play.png" >
+		</div>
+		<audio src="img/music.mp3" loop="loop" autoplay="autoplay">
+	</header>
+	<div class="row">
+		<div class="banner">
+			<div class="swiper-container">
+			    <div class="swiper-wrapper">
+			        <div class="swiper-slide"><img src="img/banner1.jpg" ></div>
+			        <div class="swiper-slide"><img src="img/banner2.jpg" ></div>
+			        <div class="swiper-slide"><img src="img/banner3.jpg" ></div>
+			        <div class="swiper-slide"><img src="img/banner4.jpg" ></div>
+			    </div>
+			    <!-- Add Pagination -->
+			    <div class="swiper-pagination"></div>
+			</div>
+		</div>
+		<div id="form">
+			<form>
+				<div class="username">
+					<span>用户名</span>
+					<input type="text" name="username" />
+				</div>
+				<div class="password">
+					<span>密码</span>
+					<input type="password" name="password" />
+				</div>
+				<div class="button">
+					<button type="submit">登录</button>
+					<button><a href="login.html">注册</a></button>
+					<button><a href="changePassword.html">忘记密码</a></button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/public.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>
