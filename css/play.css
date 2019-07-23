@@ -1,6 +1,10 @@
 .banner img {
 	width: 100%;
 }
+.header img:first-child{
+	width: 1.1875rem;
+	height: 1.1875rem;
+}
 .row{
 	padding: 2.5rem 3.125rem 0;
 	font-size: 1.25rem;
@@ -33,4 +37,7 @@ button{
 }
 .next{
 	margin-top: 0.625rem;
+}
+.border-color{
+	border-color:crimson;
 }
