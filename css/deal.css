@@ -23,7 +23,7 @@
 .bg{
 	width: 12.5rem;
 	height: 17.6875rem;
-	background: url(../img/background-color.jpg);
+	background-image: url(../img/background-color.jpg);
 	 background-size:contain;
 	 margin-bottom: 1.5rem;
 }
@@ -35,4 +35,26 @@
 	margin-top: 0.9375rem;
 	background: white;
 	border:1px solid #AAAAAA;
+	margin:  0.9375rem auto;
+}
+.button .next,.button .prev{
+	display: inline-block;	
+}
+.button .next{
+	margin-left: 0.9375rem;
+}
+.civilian{
+	background-image: url(../img/civilian.jpg);
+}
+.guard{
+	background-image: url(../img/guard.jpg);
+}
+.prophet{
+	background-image: url(../img/prophet.jpg);
+}
+.werewolf{
+	background-image: url(../img/werewolf.jpg);
+}
+.witch{
+	background-image: url(../img/witch.jpg);
 }
