@@ -7,11 +7,11 @@
 }
 .row{
 	padding: 2.5rem 3.125rem 0;
-	font-size: 1.25rem;
+	font-size: 1rem;
 	text-align: center;
 }
 button{
-	font-size: 1.25rem;
+	font-size: 1rem;
 	background: #fff;
 	border: 1px solid #DDDDDD;
 	border-radius: 5px;
@@ -35,9 +35,12 @@ button{
 	text-align: right;
 	line-height: 3.125rem;
 }
-.next{
-	margin-top: 0.625rem;
+.show~button{
+	margin:  0.625rem;
+	padding-top:  0.625rem;
+	padding-bottom: 0.625rem;
 }
+
 .border-color{
 	border-color:crimson;
 }

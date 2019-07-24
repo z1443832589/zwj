@@ -25,7 +25,7 @@ function  peopleNum(num){
 	}
 	
 }
-$('.next').on('touchend',function(){
+$('.play').on('touchend',function(){
 	if(parseInt($('.prophet').text())>0){
 		var num = parseInt($('.border-color').text())
 		var arr = []
@@ -34,25 +34,55 @@ $('.next').on('touchend',function(){
 		setArr(arr,$('.prophet'))
 		setArr(arr,$('.witch'))
 		setArr(arr,$('.guard'))
-		var dataPeople = {}
+		var dataPeople = new Object();
 		var i = 0;
-		var a = 0;
 		var keys = new Array(1)
-		while (a<40){
-			var key = Math.ceil(Math.random()*(num-1))
-			for(var j = 0;j < keys.length;j++){
-				if(keys.indexOf(key)<0){
-					keys.push(key)
-					var data = arr[key]
-					dataPeople[i] = {identity:data}
-					i++
+		while (i<num){
+			var key = Math.ceil(Math.random()*num)-1;
+			if(keys.indexOf(key)<0){
+				keys[i] = key;
+				var data = arr[key]
+				dataPeople[i] = {
+					id:i+1,
+					identity:data,
+					life:1,
 				}
+				if(arr[key] == 'civilian'){
+					dataPeople[i].position = 'ping'
+				}else if(arr[key] == 'werewolf'){
+					dataPeople[i].position = 'lang'
+				}else{
+					dataPeople[i].position = 'shen'
+				}
+				if(arr[key] == 'witch'){
+					dataPeople[i].duyao = 1
+					dataPeople[i].jieyao = 1
+				}
+				i++;
 			}
-			a++;
 		}
-			console.log(dataPeople,keys,arr)
+			console.log(dataPeople)
+			localStorage.setItem('dataPeople',JSON.stringify(dataPeople))
+			var dataTime = {
+				day:1,
+				schedule:0
+			}
+			localStorage.setItem('dataTime',JSON.stringify(dataTime))
+			localStorage.setItem('jingZhang','false')
+			localStorage.setItem('jingHui','true')
+			location.href = 'deal.html'
+	}else{
+		alert('请选择人数！')
 	}
 })
+$('.continue').on('touchend',function(){
+	if(localStorage.getItem('dataTime')){
+		location.href = 'playGame.html'
+	}else{
+		alert('还没有开始游戏哦~')
+	}
+})
+// localStorage.removeItem('dataTime');
 //添加数组
 function setArr(arr,el){
 	for(var i = 0;i < parseInt(el.text());i++){
