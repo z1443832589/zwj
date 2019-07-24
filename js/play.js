@@ -77,7 +77,7 @@ $('.play').on('touchend',function(){
 })
 $('.continue').on('touchend',function(){
 	if(localStorage.getItem('dataTime')){
-		location.href = 'playGame.html'
+		location.href = 'deal.html'
 	}else{
 		alert('还没有开始游戏哦~')
 	}
