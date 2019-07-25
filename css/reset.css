@@ -30,9 +30,10 @@ body {
 	overflow: hidden;
     font-family: -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;
 }
-}
 ul,
+li,
 ol {
+	list-style: none;
     list-style-type: none;
 }
 
