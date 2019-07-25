@@ -27,7 +27,6 @@ img{
 body {
     color: #333;
     font-size:16px;
-	overflow: hidden;
     font-family: -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;
 }
 ul,
@@ -93,4 +92,19 @@ a:focus {
     top: 3.2rem;
     left: 6rem;
     color: orangered;
+}
+.civilian{
+	background-image: url(../img/civilian.jpg) !important;
+}
+.guard{
+	background-image: url(../img/guard.jpg) !important;
+}
+.prophet{
+	background-image: url(../img/prophet.jpg) !important;
+}
+.werewolf{
+	background-image: url(../img/werewolf.jpg) !important;
+}
+.witch{
+	background-image: url(../img/witch.jpg) !important;
 }

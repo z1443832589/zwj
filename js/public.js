@@ -38,3 +38,20 @@ function appendElement(_this,val,bool){
 	}
 	
 }
+var data= JSON.parse(localStorage.getItem('dataPeople'))
+function showIdentity(Identity){
+	for(let i in data){
+		$('#app>ul').append('<li><span>'+data[i].id+'</span></li>')
+		if(data[i].identity == Identity){
+			var a = parseInt(i)+1;
+			if(a == data[i].id){
+				$('li:last-child').addClass(Identity)
+			}
+		}
+		if(data[i].life == 0){
+			$('li:last-child').append('<img class="die" src="img/die.png" >')
+		}
+	}
+}
+// data[8].life = 1;
+// localStorage.setItem('dataPeople',JSON.stringify(data))

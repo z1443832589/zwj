@@ -9,9 +9,6 @@
 	width: 1.1875rem;
 	height: 1.1875rem;
 }
-body{
-	overflow: auto;
-}
 .row{
 	padding: 3.125rem 0;
 	position: relative;
