@@ -16,16 +16,22 @@ $('.sure').click(function(){
 	for (var i = 0;i < $('li').length;i++) {
 		if($('li').eq(i).children('img').length > 0){
 			if($('li').eq(i).children('img').attr('class') == 'sha'){
-				data[i].life = 0;
 				$('.sure').attr('disabled','disabled')
 				$('.sure').addClass('disabled-btn');
 				$('.return').removeClass('disabled-btn');
 				$('.return').removeAttr('disabled')
-				var dataPlay = {
-					werewolf:i
-				} 
+				var dataTime = JSON.parse(localStorage.getItem('dataTime'))
+				console.log(i)
+				var day = dataTime.day;
+				var dataPlay = []
+				dataPlay[day-1] = {
+						werewolf:i+1,
+						prophet:0,
+						duyao:0,
+						jieyao:0,
+						guard:0
+					}
 				localStorage.setItem('dataPlay',JSON.stringify(dataPlay))
-				localStorage.setItem('dataPeople',JSON.stringify(data))
 			}
 			bool = true;
 			break;
@@ -41,3 +47,5 @@ $('.sure').click(function(){
 $('.return').click(function(){
 	location.href = 'playGame.html'
 })
+// data[8].life = 1
+// localStorage.setItem('dataPeople',JSON.stringify(data))

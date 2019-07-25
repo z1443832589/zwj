@@ -93,18 +93,18 @@ a:focus {
     left: 6rem;
     color: orangered;
 }
-.civilian{
+li.civilian,div.civilian{
 	background-image: url(../img/civilian.jpg) !important;
 }
-.guard{
+li.guard,div.guard{
 	background-image: url(../img/guard.jpg) !important;
 }
-.prophet{
+li.prophet,div.prophet{
 	background-image: url(../img/prophet.jpg) !important;
 }
-.werewolf{
+li.werewolf,div.werewolf{
 	background-image: url(../img/werewolf.jpg) !important;
 }
-.witch{
+li.witch,div.witch{
 	background-image: url(../img/witch.jpg) !important;
 }

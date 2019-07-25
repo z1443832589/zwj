@@ -1,0 +1,46 @@
+#app{
+	text-align: center;
+}
+#app>ul{
+	overflow: hidden;
+	margin: 0 auto;;
+}
+#app>ul li{
+	position: relative;
+	width:6.25rem;
+	height: 8.8rem;
+	float: left;
+	margin: 0.78rem;
+	text-align: center;
+	background-image: url(../img/background-color.jpg);
+	background-size:contain;
+}
+#app>ul li span{
+	color:#fff;
+	margin-top: 0.625rem;
+	text-align: center;
+	display: inline-block;
+	width: 1.5625rem;
+	height: 1.5625rem;
+	border: 1px solid #fff;
+	border-radius: 50%;
+}
+#app button{
+	background: #fff;
+	border: 1px solid #007AFF;
+	border-radius: 5px;
+	color: #007AFF;
+	width: 4.6875rem;
+	height: 2rem;
+	margin: 1.25rem  1.25rem 3.125rem;
+}
+#app .disabled-btn{
+	border-color: #999;
+	color: #999;
+}
+#app img {
+	width: 6.25rem;
+	position: absolute;
+	top: calc(50% - 1.3rem);
+	left: calc(50% - 3rem);
+}
