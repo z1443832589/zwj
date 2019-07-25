@@ -6,7 +6,7 @@ $('.id h1').text(data[0].id)
 var bool = true;
 var i = 0;
 Prev()
-$('.button').on('click','button',function(e){
+$('.button').on('click','button',function(){
 	if($(this).attr('class') == 'show'){
 		if(bool){
 			$(this).text('隐藏身份')

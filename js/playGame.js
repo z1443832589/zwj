@@ -26,36 +26,71 @@ if(jingZhang == 'false' && jingHui == 'true'){
 }
 switch(dataTime.day){
 	case 1:
-		$('.row>ul>a').text('第一天');
+		$('.row>ul>a span').text('一')
 		break;
 	case 2:
-		$('.row>ul>a').text('第二天');
+		$('.row>ul>a span').text('一')
 		break;
 	case 3:
-		$('.row>ul>a').text('第三天');
+		$('.row>ul>a span').text('二')
 		break;
 	case 4:
-		$('.row>ul>a').text('第四天');
+		$('.row>ul>a span').text('三')
 		break;
 	case 5:
-		$('.row>ul>a').text('第五天');
+		$('.row>ul>a span').text('四')
 		break;
 	case 6:
-		$('.row>ul>a').text('第六天');
+		$('.row>ul>a span').text('六')
 		break;
 	case 7:
-		$('.row>ul>a').text('第七天');
+		$('.row>ul>a span').text('七')
 		break;
 	case 8:
-		$('.row>ul>a').text('第八天');
+		$('.row>ul>a span').text('八')
 		break;
 	case 9:
-		$('.row>ul>a').text('第九天');
+		$('.row>ul>a span').text('九')
 		break;
 	case 10:
-		$('.row>ul>a').text('第十天');
+		$('.row>ul>a span').text('十')
 		break;	
 }
 if(dataTime.schedule<=4){
-	$('.pm').chldren('li').eq(dataTime.schedule-1).addClass('schedule')
+	addCss($('.pm li'),dataTime.schedule)
+}else{
+	addCss($('.pm li'),5)
+	addCss($('.am li'),dataTime.schedule-4)
+}
+$('.day li').on('click',function(){
+	var i = $(this).index();
+	console.log($(this).parent().attr('class'))
+	if(dataTime.schedule<=4){
+		Hraf($(this),dataTime.schedule,$(this).parent().attr('class') != 'ul-child am')
+	}else{
+		Hraf($(this),dataTime.schedule-4,true)
+	}
+})
+function addCss(_this,length){
+	for(var i = 0;i < length-1;i++){
+		_this.eq(i).children().addClass('schedule')
+	}
+}
+// dataTime.schedule = 1;
+// localStorage.setItem('dataTime',JSON.stringify(dataTime))
+function Hraf(_this,schedule,bool){
+	if(_this.children().attr('class') != 'schedule'){
+		if(_this.index()+1 == schedule && bool){
+			dataTime.schedule++;
+			localStorage.setItem('dataTime',JSON.stringify(dataTime))
+			if(_this.children().text() == '所有人发言' || _this.children().text() == '警长发言'){
+				alert(_this.children().text())
+				addCss($('.am li'),dataTime.schedule-4)
+			}else{
+				location.href = _this.children().attr('data-name')+'.html';
+			}
+		}else{
+			alert('请按照顺序进行')
+		}
+	}
 }

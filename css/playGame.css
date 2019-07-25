@@ -76,7 +76,8 @@ body{
 	border: 1px solid #666666;
 	border-radius: 5px;
 }
-.schedule{
+.ul-child li a.schedule{
 	background: #2C8DFB;
 	color: white;
+	border-color:#2C8DFB;
 }

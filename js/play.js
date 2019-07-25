@@ -65,7 +65,7 @@ $('.play').on('touchend',function(){
 			localStorage.setItem('dataPeople',JSON.stringify(dataPeople))
 			var dataTime = {
 				day:1,
-				schedule:0
+				schedule:1
 			}
 			localStorage.setItem('dataTime',JSON.stringify(dataTime))
 			localStorage.setItem('jingZhang','false')
