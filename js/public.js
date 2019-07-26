@@ -58,3 +58,14 @@ function showIdentity(Identity){
 }
 // data[8].life = 1;
 // localStorage.setItem('dataPeople',JSON.stringify(data))
+if($('.return').length>0){
+	$('.return').click(function(){
+		location.href = 'playGame.html'
+	})
+}
+function disabledSure(){
+	$('.sure').attr('disabled','disabled')
+	$('.sure').addClass('disabled-btn');
+	$('.return').removeClass('disabled-btn');
+	$('.return').removeAttr('disabled')
+}

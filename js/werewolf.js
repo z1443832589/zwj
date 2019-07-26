@@ -16,10 +16,7 @@ $('.sure').click(function(){
 	for (var i = 0;i < $('li').length;i++) {
 		if($('li').eq(i).children('img').length > 0){
 			if($('li').eq(i).children('img').attr('class') == 'sha'){
-				$('.sure').attr('disabled','disabled')
-				$('.sure').addClass('disabled-btn');
-				$('.return').removeClass('disabled-btn');
-				$('.return').removeAttr('disabled')
+				disabledSure()
 				var dataTime = JSON.parse(localStorage.getItem('dataTime'))
 				console.log(i)
 				var day = dataTime.day;
@@ -43,9 +40,6 @@ $('.sure').click(function(){
 	if(!bool){
 		alert('请选择要杀的人！')
 	}
-})
-$('.return').click(function(){
-	location.href = 'playGame.html'
 })
 // data[8].life = 1
 // localStorage.setItem('dataPeople',JSON.stringify(data))

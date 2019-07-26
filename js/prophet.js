@@ -16,10 +16,7 @@ $('.sure').click(function(){
 	for (var i = 0;i < $('li').length;i++) {
 		if($('li').eq(i).children('img').length > 0){
 			if($('li').eq(i).children('img').attr('class') == 'yan'){
-				$('.sure').attr('disabled','disabled')
-				$('.sure').addClass('disabled-btn');
-				$('.return').removeClass('disabled-btn');
-				$('.return').removeAttr('disabled')
+				disabledSure()
 				var shenfen = data[i].identity;
 				$('li').eq(i).children('img').remove();
 				$('li').eq(i).addClass(shenfen)
@@ -41,13 +38,7 @@ $('.sure').click(function(){
 	}
 })
 if(prophetLife == 0){
-	$('.sure').attr('disabled','disabled')
-	$('.sure').addClass('disabled-btn');
-	$('.return').removeClass('disabled-btn');
-	$('.return').removeAttr('disabled')
+	disabledSure()
 }
-$('.return').click(function(){
-	location.href = 'playGame.html'
-})
 // data[3].life = 1;
 // localStorage.setItem('dataPeople',JSON.stringify(data))
