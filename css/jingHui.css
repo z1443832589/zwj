@@ -1,0 +1,6 @@
+@import url("identity.css");
+#app img {
+	width: 2rem;
+	left: calc(50% - 1rem);
+	top: 0; 
+}

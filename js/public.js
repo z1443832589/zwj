@@ -43,12 +43,17 @@ function appendElement(_this,val,bool){
 	}
 	
 }
+// data[3].life = 1;
+// localStorage.setItem('dataPlay',JSON.stringify(data))
 function showIdentity(Identity){
 	var thisLife = 0;
 	for(let i in data){
 		$('#app>ul').append('<li><span>'+data[i].id+'</span></li>')
 		if(data[i].life == 0){
 			$('li:last-child').append('<img class="die" src="img/die.png" >')
+		}
+		if(parseInt(i)+1 == jingZhang){
+			$('li:last-child').append('<img class="jingHui" src="img/jingHui.png" >')
 		}
 		if(data[i].identity == Identity){
 			var a = parseInt(i)+1;
@@ -61,14 +66,14 @@ function showIdentity(Identity){
 	return thisLife;
 }
 function clickLi(_this,img,me,die){
-	if(_this.children('img').length == 0){
+	if(_this.children('img').length == 0 || _this.children('img').attr('class') == 'jingHui'){
 		if(!_this.attr('class')){
 			$('.'+img).remove();
 			_this.append('<img class="'+img+'" src="img/'+img+'.png" >')
 		}else{
 			alert(me)
 		}
-	}else if(_this.children('img').attr('class') != img){
+	}else if(_this.children('img').attr('class') == 'die'){
 		alert(die)
 	}
 }
