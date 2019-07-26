@@ -1,0 +1,4 @@
+@import url("identity.css");
+#app img {
+	top: calc(50% - 4rem);
+}

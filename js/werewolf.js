@@ -1,15 +1,6 @@
 showIdentity('werewolf')
 $('li').click(function(){
-	if($(this).children('img').length == 0){
-		if(!$(this).attr('class')){
-			$('.sha').remove();
-			$(this).append('<img class="sha" src="img/sha.png" >')
-		}else{
-			alert('在本作者的这个游戏里，狼人请不要自刀好吗！')
-		}
-	}else{
-			alert('这个人都已经死，就放过他吧~')
-		}
+	clickLi($(this),"sha",'在本作者的这个游戏里，狼人请不要自刀好吗！','这个人都已经死，就放过他吧~')
 })
 $('.sure').click(function(){
 	var bool = true;
