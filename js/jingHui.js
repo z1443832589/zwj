@@ -3,6 +3,9 @@ for(let i in data){
 	if(data[i].life == 0){
 		$('li:last-child').append('<img class="die" src="img/die.png" >')
 	}
+	if(parseInt(i)+1 == jingZhang){
+		$('li:last-child').append('<img class="jingHui" src="img/jingHui.png" >')
+	}
 }
 $('li').click(function(){
 	clickLi($(this),"jingHui",'兄弟，别点自己啊！','这个人已经出局了，还给个毛警徽')
