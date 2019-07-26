@@ -18,9 +18,9 @@ $('.sure').click(function(){
 					dataPlay[day-1].duyao = i+1;
 				}
 				localStorage.setItem('dataPlay',JSON.stringify(dataPlay))
+				bool = true;
+				break;
 			}
-			bool = true;
-			break;
 		}else if(val == 3){
 			disabledSure()
 		}else{

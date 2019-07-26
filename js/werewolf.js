@@ -6,7 +6,7 @@ $('.sure').click(function(){
 	var bool = true;
 	for (var i = 0;i < $('li').length;i++) {
 		if($('li').eq(i).children('img').length > 0){
-			if($('li').eq(i).children('img').attr('class') == 'sha'){
+			if($('li').eq(i).children('img').last().attr('class') == 'sha'){
 				disabledSure()
 				var day = dataTime.day;
 				var dataPlay = []
@@ -18,11 +18,12 @@ $('.sure').click(function(){
 						guard:0
 					}
 				localStorage.setItem('dataPlay',JSON.stringify(dataPlay))
+				bool = true;
+				break;
 			}
-			bool = true;
-			break;
 		}else{
 			bool = false;
+			console.log(bool)
 			continue;
 		}
 	}

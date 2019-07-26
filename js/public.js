@@ -43,13 +43,13 @@ function appendElement(_this,val,bool){
 	}
 	
 }
-// data[3].life = 1;
-// localStorage.setItem('dataPlay',JSON.stringify(data))
 function showIdentity(Identity){
 	var thisLife = 0;
 	for(let i in data){
 		$('#app>ul').append('<li><span>'+data[i].id+'</span></li>')
+		console.log(data[i].life,i)
 		if(data[i].life == 0){
+			console.log(i)
 			$('li:last-child').append('<img class="die" src="img/die.png" >')
 		}
 		if(parseInt(i)+1 == jingZhang){
@@ -77,7 +77,7 @@ function clickLi(_this,img,me,die){
 		alert(die)
 	}
 }
-// data[8].life = 1;
+// data[4].life = 1;
 // localStorage.setItem('dataPeople',JSON.stringify(data))
 $('.return').click(function(){
 	location.href = 'playGame.html'

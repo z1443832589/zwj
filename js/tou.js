@@ -1,6 +1,14 @@
-var prophetLife = showIdentity('guard')
+for(let i in data){
+		$('#app>ul').append('<li><span>'+data[i].id+'</span></li>')
+		if(data[i].life == 0){
+			$('li:last-child').append('<img class="die" src="img/die.png" >')
+		}
+		if(parseInt(i)+1 == jingZhang){
+			$('li:last-child').append('<img class="jingHui" src="img/jingHui.png" >')
+		}
+	}
 $('li').click(function(){
-	clickLi($(this),"dun",'兄弟，别点自己啊！','这个人已经出局了，守护他也没什么卵用了')
+	clickLi($(this),"piao",'','这个人已经出局了，守护他也没什么卵用了')
 })
 $('.sure').click(function(){
 	var bool = true;
@@ -11,9 +19,9 @@ $('.sure').click(function(){
 				var day = dataTime.day;
 				dataPlay[day-1].guard = i+1;
 				localStorage.setItem('dataPlay',JSON.stringify(dataPlay))
-				bool = true;
-				break;
 			}
+			bool = true;
+			break;
 		}else{
 			bool = false;
 			continue;
@@ -23,6 +31,3 @@ $('.sure').click(function(){
 		alert('请选择要守护的人！')
 	}
 })
-if(prophetLife == 0){
-	disabledSure()
-}

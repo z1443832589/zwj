@@ -6,17 +6,17 @@ $('.sure').click(function(){
 	var bool = true;
 	for (var i = 0;i < $('li').length;i++) {
 		if($('li').eq(i).children('img').length > 0){
-			if($('li').eq(i).children('img').attr('class') == 'yan'){
+			if($('li').eq(i).children('img').last().attr('class') == 'yan'){
 				disabledSure()
 				var shenfen = data[i].identity;
-				$('li').eq(i).children('img').remove();
+				$('li').eq(i).children('img').last().remove();
 				$('li').eq(i).addClass(shenfen)
 				var day = dataTime.day;
 				dataPlay[day-1].prophet = i+1;
 				localStorage.setItem('dataPlay',JSON.stringify(dataPlay))
+				bool = true;
+				break;
 			}
-			bool = true;
-			break;
 		}else{
 			bool = false;
 			continue;
