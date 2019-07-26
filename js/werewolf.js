@@ -9,21 +9,34 @@ $('.sure').click(function(){
 			if($('li').eq(i).children('img').last().attr('class') == 'sha'){
 				disabledSure()
 				var day = dataTime.day;
-				var dataPlay = []
-				dataPlay[day-1] = {
+				if(localStorage.getItem('dataPlay')){
+					var dataPlay = JSON.parse(localStorage.getItem('dataPlay'))
+					dataPlay[day-1] = ({
 						werewolf:i+1,
 						prophet:0,
 						duyao:0,
 						jieyao:0,
-						guard:0
-					}
+						guard:0,
+						paio:0
+					})
+				}else{
+					var dataPlay = [];
+					dataPlay[day-1] = ({
+						werewolf:i+1,
+						prophet:0,
+						duyao:0,
+						jieyao:0,
+						guard:0,
+						paio:0
+					})
+				}
+				
 				localStorage.setItem('dataPlay',JSON.stringify(dataPlay))
 				bool = true;
 				break;
 			}
 		}else{
 			bool = false;
-			console.log(bool)
 			continue;
 		}
 	}
@@ -31,5 +44,6 @@ $('.sure').click(function(){
 		alert('请选择要杀的人！')
 	}
 })
+// localStorage.removeItem('dataPlay')
 // data[8].life = 1
 // localStorage.setItem('dataPeople',JSON.stringify(data))

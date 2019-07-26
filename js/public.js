@@ -47,9 +47,7 @@ function showIdentity(Identity){
 	var thisLife = 0;
 	for(let i in data){
 		$('#app>ul').append('<li><span>'+data[i].id+'</span></li>')
-		console.log(data[i].life,i)
 		if(data[i].life == 0){
-			console.log(i)
 			$('li:last-child').append('<img class="die" src="img/die.png" >')
 		}
 		if(parseInt(i)+1 == jingZhang){
@@ -79,8 +77,28 @@ function clickLi(_this,img,me,die){
 }
 // data[4].life = 1;
 // localStorage.setItem('dataPeople',JSON.stringify(data))
+function result(Position){
+	var num = 0;
+	for(var i = 0;i < Object.keys(data).length;i++){
+		if(data[i].position == Position && data[i].life == 0){
+			num++;
+		}
+	}
+	return num;
+}
 $('.return').click(function(){
-	location.href = 'playGame.html'
+	var ping = result('ping')
+	var shen = result('shen')
+	var lang = result('lang')
+	if(ping == 3 || shen == 3){
+		localStorage.setItem('victory','lang')
+		location.href = 'result.html';
+	}else if(lang == 3){
+		localStorage.setItem('victory','hao')
+		location.href = 'result.html';
+	}else{
+		location.href = 'playGame.html';
+	}
 })
 function disabledSure(){
 	$('.sure').attr('disabled','disabled')

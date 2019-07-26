@@ -11,31 +11,32 @@ $('a').click(function(){
 		}
 	}
 })
+
 if(dataTime.day == 1){
-	$('.jingzhang').show()
+	$('[name="jingzhang"]').parent('li').show()
 }else{
-	$('.jingzhang').hide()
+	$('[name="jingzhang"]').parent('li').hide()
 }
 if(jingZhang == 'false' && jingHui == 'true'){
-	$('.jinghui').show()
+	$('[name="jinghui"]').parent('li').show()
 }else{
-	$('.jinghui').hide()
+	$('[name="jinghui"]').parent('li').hide()
 }
 switch(dataTime.day){
 	case 1:
 		$('.row>ul>a span').text('一')
 		break;
 	case 2:
-		$('.row>ul>a span').text('一')
-		break;
-	case 3:
 		$('.row>ul>a span').text('二')
 		break;
-	case 4:
+	case 3:
 		$('.row>ul>a span').text('三')
 		break;
-	case 5:
+	case 4:
 		$('.row>ul>a span').text('四')
+		break;
+	case 5:
+		$('.row>ul>a span').text('五')
 		break;
 	case 6:
 		$('.row>ul>a span').text('六')
@@ -61,7 +62,6 @@ if(dataTime.schedule<=4){
 }
 $('.day li').on('click',function(){
 	var i = $(this).index();
-	console.log($(this).parent().attr('class'))
 	if(dataTime.schedule<=4){
 		Hraf($(this),dataTime.schedule,$(this).parent().attr('class') != 'ul-child am')
 	}else{
@@ -70,11 +70,16 @@ $('.day li').on('click',function(){
 })
 function addCss(_this,length){
 	for(var i = 0;i < length-1;i++){
-		_this.eq(i).children().addClass('schedule')
+		// if(_this.css('display')=='none'){
+		// 	console.log(_this.css('display') == 'none')
+		// 	length++;
+		// 	console.log(length)
+		// }else{
+		// 	console.log(1)
+			_this.eq(i).children().addClass('schedule')
+		// }
 	}
 }
-// dataTime.schedule = 1;
-// localStorage.setItem('dataTime',JSON.stringify(dataTime))
 function Hraf(_this,schedule,bool){
 	if(_this.children().attr('class') != 'schedule'){
 		if(_this.index()+1 == schedule && bool){
@@ -91,3 +96,5 @@ function Hraf(_this,schedule,bool){
 		}
 	}
 }
+// dataTime.schedule = 5
+// localStorage.setItem('dataTime',JSON.stringify(dataTime))
