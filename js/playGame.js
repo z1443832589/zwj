@@ -11,7 +11,14 @@ $('a').click(function(){
 		}
 	}
 })
-
+// localStorage.setItem('jingZhang',1)
+// console.log(jingZhang)
+if(!isNaN(parseInt(jingZhang))){
+	if(data[parseInt(jingZhang)].life == 0){
+		jingZhang = false;
+		localStorage.setItem('jingZhang',jingZhang)
+	}
+}
 if(dataTime.day == 1){
 	$('[name="jingzhang"]').parent('li').show()
 }else{
@@ -21,6 +28,13 @@ if(jingZhang == 'false' && jingHui == 'true'){
 	$('[name="jinghui"]').parent('li').show()
 }else{
 	$('[name="jinghui"]').parent('li').hide()
+}
+if(jingHui == 'false'){
+	$('[name="fayan"]').parent('li').remove();
+}else{
+	$('[data-name="tou"]').parent('li').remove();
+	$('.am').append('<li><a href="javascript:;" name="fayan">警长发言</a></li>'+
+		'<li><a href="javascript:;" data-name="tou">投票</a></li>')
 }
 switch(dataTime.day){
 	case 1:
@@ -69,20 +83,21 @@ $('.day li').on('click',function(){
 	}
 })
 function addCss(_this,length){
+	// if(length > 1){
+	// 	length--
+	// }
 	for(var i = 0;i < length-1;i++){
-		// if(_this.css('display')=='none'){
-		// 	console.log(_this.css('display') == 'none')
-		// 	length++;
-		// 	console.log(length)
-		// }else{
-		// 	console.log(1)
+		if(_this.eq(i).css('display')=='none'){
+			_this.eq(i+2).children().addClass('schedule')
+		}else{
 			_this.eq(i).children().addClass('schedule')
-		// }
+		}
 	}
 }
 function Hraf(_this,schedule,bool){
 	if(_this.children().attr('class') != 'schedule'){
-		if(_this.index()+1 == schedule && bool){
+		console.log(bool)
+		if(_this.index()+1 == schedule && bool || _this.index()-1 == schedule && bool){
 			dataTime.schedule++;
 			localStorage.setItem('dataTime',JSON.stringify(dataTime))
 			if(_this.children().text() == '所有人发言' || _this.children().text() == '警长发言' || _this.children().text() == '竞选警长'){

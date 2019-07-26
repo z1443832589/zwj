@@ -57,7 +57,9 @@ function dataChange(){
 		data[jieyao].life = 1;
 		data[witch].jieyao = 0;
 	}
-	data[guard].life = 1;
+	if(guard>0){
+		data[guard].life = 1;
+	}
 	data[piao].life = 0;
 	localStorage.setItem('dataPeople',JSON.stringify(data))
 }
