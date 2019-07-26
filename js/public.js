@@ -61,7 +61,6 @@ function showIdentity(Identity){
 	return thisLife;
 }
 function clickLi(_this,img,me,die){
-	console.log( _this.children('img').attr('class') == img)
 	if(_this.children('img').length == 0){
 		if(!_this.attr('class')){
 			$('.'+img).remove();

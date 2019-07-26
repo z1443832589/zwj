@@ -2,3 +2,6 @@
 #app img {
 	top: calc(50% - 4rem);
 }
+#app .radio{
+	margin-top: 1.2rem;
+}
