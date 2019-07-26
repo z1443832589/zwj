@@ -20,9 +20,7 @@ $('.sure').click(function(){
 				var shenfen = data[i].identity;
 				$('li').eq(i).children('img').remove();
 				$('li').eq(i).addClass(shenfen)
-				var dataTime = JSON.parse(localStorage.getItem('dataTime'))
 				var day = dataTime.day;
-				var dataPlay = JSON.parse(localStorage.getItem('dataPlay'))
 				dataPlay[day-1].prophet = i+1;
 				localStorage.setItem('dataPlay',JSON.stringify(dataPlay))
 			}
@@ -40,5 +38,3 @@ $('.sure').click(function(){
 if(prophetLife == 0){
 	disabledSure()
 }
-// data[3].life = 1;
-// localStorage.setItem('dataPeople',JSON.stringify(data))

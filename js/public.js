@@ -1,6 +1,11 @@
 var a = 1;
 var audioSrc = $('audio').attr('src')
 var _boolean = sessionStorage.getItem('music')
+var data= JSON.parse(localStorage.getItem('dataPeople'))
+var dataTime = JSON.parse(localStorage.getItem('dataTime'))
+var dataPlay = JSON.parse(localStorage.getItem('dataPlay'))
+var jingZhang = JSON.parse(localStorage.getItem('jingZhang'))
+var jingHui = JSON.parse(localStorage.getItem('jingHui'))
 $(document).ready(function(){
 	if(_boolean == 'fales'){
 		$('audio').attr('src','')
@@ -38,7 +43,6 @@ function appendElement(_this,val,bool){
 	}
 	
 }
-var data= JSON.parse(localStorage.getItem('dataPeople'))
 function showIdentity(Identity){
 	var thisLife = 0;
 	for(let i in data){
@@ -58,11 +62,9 @@ function showIdentity(Identity){
 }
 // data[8].life = 1;
 // localStorage.setItem('dataPeople',JSON.stringify(data))
-if($('.return').length>0){
-	$('.return').click(function(){
-		location.href = 'playGame.html'
-	})
-}
+$('.return').click(function(){
+	location.href = 'playGame.html'
+})
 function disabledSure(){
 	$('.sure').attr('disabled','disabled')
 	$('.sure').addClass('disabled-btn');

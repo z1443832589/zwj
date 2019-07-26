@@ -17,8 +17,6 @@ $('.sure').click(function(){
 		if($('li').eq(i).children('img').length > 0){
 			if($('li').eq(i).children('img').attr('class') == 'sha'){
 				disabledSure()
-				var dataTime = JSON.parse(localStorage.getItem('dataTime'))
-				console.log(i)
 				var day = dataTime.day;
 				var dataPlay = []
 				dataPlay[day-1] = {
