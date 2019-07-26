@@ -11,9 +11,6 @@ $('a').click(function(){
 		}
 	}
 })
-var dataTime = JSON.parse(localStorage.getItem('dataTime'))
-var jingZhang = localStorage.getItem('jingZhang');
-var jingHui = localStorage.getItem("jingHui");
 if(dataTime.day == 1){
 	$('.jingzhang').show()
 }else{
@@ -83,7 +80,7 @@ function Hraf(_this,schedule,bool){
 		if(_this.index()+1 == schedule && bool){
 			dataTime.schedule++;
 			localStorage.setItem('dataTime',JSON.stringify(dataTime))
-			if(_this.children().text() == '所有人发言' || _this.children().text() == '警长发言'){
+			if(_this.children().text() == '所有人发言' || _this.children().text() == '警长发言' || _this.children().text() == '竞选警长'){
 				alert(_this.children().text())
 				addCss($('.am li'),dataTime.schedule-4)
 			}else{

@@ -4,8 +4,8 @@ var _boolean = sessionStorage.getItem('music')
 var data= JSON.parse(localStorage.getItem('dataPeople'))
 var dataTime = JSON.parse(localStorage.getItem('dataTime'))
 var dataPlay = JSON.parse(localStorage.getItem('dataPlay'))
-var jingZhang = JSON.parse(localStorage.getItem('jingZhang'))
-var jingHui = JSON.parse(localStorage.getItem('jingHui'))
+var jingZhang = localStorage.getItem('jingZhang')
+var jingHui = localStorage.getItem('jingHui')
 $(document).ready(function(){
 	if(_boolean == 'fales'){
 		$('audio').attr('src','')
