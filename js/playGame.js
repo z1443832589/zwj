@@ -13,21 +13,24 @@ $('a').click(function(){
 })
 // localStorage.setItem('jingZhang',1)
 // console.log(jingZhang)
+console.log(!isNaN(parseInt(jingZhang)))
 if(!isNaN(parseInt(jingZhang))){
-	if(data[parseInt(jingZhang)].life == 0){
+	if(data[parseInt(jingZhang)-1].life == 0){
 		jingZhang = false;
 		localStorage.setItem('jingZhang',jingZhang)
 	}
 }
-if(dataTime.day == 1){
-	$('[name="jingzhang"]').parent('li').show()
-}else{
-	$('[name="jingzhang"]').parent('li').hide()
+if(dataTime.day > 1){
+	$('[name="jingzhang"]').parent('li').remove()
 }
-if(jingZhang == 'false' && jingHui == 'true' || nextDay != 'true'  && jingHui != 'true'){
-	$('[name="jinghui"]').parent('li').show()
+if(jingZhang == 'false' && jingHui == 'true' || nextDay != 'true'  && jingHui == 'true'){
+	$('[name="jinghui"]').parent('li').remove()
+	$('.am').prepend('<li><a href="javascript:;" name="jinghui" data-name="jinghui">警徽选择</a></li>')
+}else if(nextDay != 'true'){
+	$('[name="jinghui"]').parent('li').remove()
+	$('.am').prepend('<li><a href="javascript:;" name="jinghui" data-name="jinghui">警徽选择</a></li>')
 }else{
-	$('[name="jinghui"]').parent('li').hide()
+	$('[name="jinghui"]').parent('li').remove()
 }
 if(jingHui == 'false'){
 	$('[name="fayan"]').parent('li').remove();
@@ -86,11 +89,7 @@ $('.day li').on('click',function(){
 function addCss(_this,length){
 	var j = notNone(_this);
 	for(var i = 0;i < length-1;i++){
-		if(_this.eq(i).css('display')=='none'){
-			_this.eq(i+1).children().addClass('schedule')
-		}else{
-			_this.eq(i+j).children().addClass('schedule')
-		}
+		_this.eq(i).children().addClass('schedule')
 	}
 }
 function Hraf(_this,schedule,bool){

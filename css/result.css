@@ -5,6 +5,44 @@
 	align-items: center;
 }
 .result{
-	
+	width: 80%;
+	height: 25%;
+	border: 1px solid #007AFF;
+	margin: 0.9375rem 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-.log{}
+.result h1.hao{
+	color: #007AFF;
+}
+.result h1.lang{
+	color: red;
+}
+.log{
+	width: 80%;
+	height: 50%;
+	border: 1px solid #333333;
+	margin-top: 3.125rem;
+	overflow-y: auto;
+	padding: 0.625rem;
+	box-sizing: border-box;
+	line-height:2rem
+}
+.log div{
+	margin-bottom: 1.25rem;
+}
+.log p{
+	font-size: 1rem;
+}
+.button{
+	margin-top: 1.6rem;
+}
+.button button{
+	background: #fff;
+	border: 1px solid #AAAAAA;
+	border-radius: 5px;
+	width: 5rem;
+	height: 2rem;
+	margin: 0 0.9375rem;
+}

@@ -14,14 +14,14 @@ $('.sure').click(function(){
 	var bool = true;
 	for (var i = 0;i < $('li').length;i++) {
 		if($('li').eq(i).children('img').length > 0){
-			if($('li').eq(i).children('img').attr('class') == 'piao'){
+			if($('li').eq(i).children('img').last().attr('class') == 'piao'){
 				var day = dataTime.day;
 				dataPlay[day-1].piao = i+1;
 				localStorage.setItem('dataPlay',JSON.stringify(dataPlay))
 				dataChange()
-				// dataTime.day++;
-				// dataTime.schedule = 1;
-				// localStorage.setItem('dataTime',JSON.stringify(dataTime))
+				dataTime.day++;
+				dataTime.schedule = 1;
+				localStorage.setItem('dataTime',JSON.stringify(dataTime))
 				bool = true;
 				disabledSure()
 				localStorage.setItem('nextDay','true')

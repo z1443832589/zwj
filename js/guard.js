@@ -6,7 +6,7 @@ $('.sure').click(function(){
 	var bool = true;
 	for (var i = 0;i < $('li').length;i++) {
 		if($('li').eq(i).children('img').length > 0){
-			if($('li').eq(i).children('img').attr('class') == 'dun'){
+			if($('li').eq(i).children('img').last().attr('class') == 'dun'){
 				disabledSure()
 				var day = dataTime.day;
 				dataPlay[day-1].guard = i+1;
