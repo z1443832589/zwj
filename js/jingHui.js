@@ -7,7 +7,7 @@ for(let i in data){
 		$('li:last-child').append('<img class="jingHui" src="img/jingHui.png" >')
 	}
 }
-if(dataTime != 1 && jingHui == "true" && jingZhang == "false"){
+if(dataTime.day  != 1 && jingHui == "true" && jingZhang == "false"){
 	$('.tearUp').removeClass('disabled-btn');
 	$('.tearUp').removeAttr('disabled')
 }
@@ -16,6 +16,8 @@ $('.tearUp').click(function(){
 	localStorage.setItem('jingHui',jingHui)
 	$('.tearUp').attr('disabled','disabled')
 	$('.tearUp').addClass('disabled-btn');
+	localStorage.setItem('nextDay','false')
+	disabledSure()
 })
 $('li').click(function(){
 	clickLi($(this),"jingHui",'兄弟，别点自己啊！','这个人已经出局了，还给个毛警徽')
@@ -24,10 +26,10 @@ $('.sure').click(function(){
 	var bool = true;
 	for (var i = 0;i < $('li').length;i++) {
 		if($('li').eq(i).children('img').length > 0){
-			console.log(1)
 			if($('li').eq(i).children('img').attr('class') == 'jingHui'){
 				disabledSure()
 				localStorage.setItem('jingZhang',i+1)
+				localStorage.setItem('nextDay','false')
 				bool = true;
 				break;
 			}
@@ -41,3 +43,4 @@ $('.sure').click(function(){
 		alert('请选择警徽！')
 	}
 })
+// localStorage.setItem('jingHui','true')

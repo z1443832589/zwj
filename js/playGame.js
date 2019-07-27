@@ -24,7 +24,7 @@ if(dataTime.day == 1){
 }else{
 	$('[name="jingzhang"]').parent('li').hide()
 }
-if(jingZhang == 'false' && jingHui == 'true'){
+if(jingZhang == 'false' && jingHui == 'true' || nextDay != 'true'  && jingHui != 'true'){
 	$('[name="jinghui"]').parent('li').show()
 }else{
 	$('[name="jinghui"]').parent('li').hide()
@@ -32,6 +32,7 @@ if(jingZhang == 'false' && jingHui == 'true'){
 if(jingHui == 'false'){
 	$('[name="fayan"]').parent('li').remove();
 }else{
+	$('[name="fayan"]').parent('li').remove();
 	$('[data-name="tou"]').parent('li').remove();
 	$('.am').append('<li><a href="javascript:;" name="fayan">警长发言</a></li>'+
 		'<li><a href="javascript:;" data-name="tou">投票</a></li>')
@@ -83,21 +84,19 @@ $('.day li').on('click',function(){
 	}
 })
 function addCss(_this,length){
-	// if(length > 1){
-	// 	length--
-	// }
+	var j = notNone(_this);
 	for(var i = 0;i < length-1;i++){
 		if(_this.eq(i).css('display')=='none'){
-			_this.eq(i+2).children().addClass('schedule')
+			_this.eq(i+1).children().addClass('schedule')
 		}else{
-			_this.eq(i).children().addClass('schedule')
+			_this.eq(i+j).children().addClass('schedule')
 		}
 	}
 }
 function Hraf(_this,schedule,bool){
 	if(_this.children().attr('class') != 'schedule'){
-		console.log(bool)
-		if(_this.index()+1 == schedule && bool || _this.index()-1 == schedule && bool){
+		var j = notNone(_this)
+		if(_this.index()+1-j == schedule && bool){
 			dataTime.schedule++;
 			localStorage.setItem('dataTime',JSON.stringify(dataTime))
 			if(_this.children().text() == '所有人发言' || _this.children().text() == '警长发言' || _this.children().text() == '竞选警长'){
@@ -111,5 +110,17 @@ function Hraf(_this,schedule,bool){
 		}
 	}
 }
+function notNone(_this){
+	var a = 0;
+	var Length = _this.prevAll().length
+	for(var i = 0;i < Length;i++){
+		if(_this.parent('ul').children().eq(i).css('display') == "none"){
+			a++;
+		}
+	}
+	return a;
+}
 // dataTime.schedule = 5
 // localStorage.setItem('dataTime',JSON.stringify(dataTime))
+// jingZhang= 'false'
+// localStorage.setItem('jingZhang',jingZhang)

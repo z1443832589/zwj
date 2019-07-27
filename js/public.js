@@ -6,6 +6,7 @@ var dataTime = JSON.parse(localStorage.getItem('dataTime'))
 var dataPlay = JSON.parse(localStorage.getItem('dataPlay'))
 var jingZhang = localStorage.getItem('jingZhang')
 var jingHui = localStorage.getItem('jingHui')
+var nextDay = localStorage.getItem('nextDay')
 $(document).ready(function(){
 	if(_boolean == 'false'){
 		$('audio').attr('src','')

@@ -19,11 +19,12 @@ $('.sure').click(function(){
 				dataPlay[day-1].piao = i+1;
 				localStorage.setItem('dataPlay',JSON.stringify(dataPlay))
 				dataChange()
-				dataTime.day++;
-				dataTime.schedule = 1;
-				localStorage.setItem('dataTime',JSON.stringify(dataTime))
+				// dataTime.day++;
+				// dataTime.schedule = 1;
+				// localStorage.setItem('dataTime',JSON.stringify(dataTime))
 				bool = true;
 				disabledSure()
+				localStorage.setItem('nextDay','true')
 				break;
 			}
 		}else{
@@ -49,6 +50,7 @@ function dataChange(){
 		}
 	}
 	data[sha].life = 0;
+	console.log(data)
 	if(duyao >= 0){
 		data[duyao].life = 0;
 		data[witch].duyao = 0;
@@ -60,6 +62,7 @@ function dataChange(){
 	if(guard>0){
 		data[guard].life = 1;
 	}
+	console.log(data)
 	data[piao].life = 0;
 	localStorage.setItem('dataPeople',JSON.stringify(data))
 }
