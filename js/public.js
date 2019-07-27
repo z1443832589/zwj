@@ -7,7 +7,7 @@ var dataPlay = JSON.parse(localStorage.getItem('dataPlay'))
 var jingZhang = localStorage.getItem('jingZhang')
 var jingHui = localStorage.getItem('jingHui')
 $(document).ready(function(){
-	if(_boolean == 'fales'){
+	if(_boolean == 'false'){
 		$('audio').attr('src','')
 		$('#audio').attr('src','img/mute.png')
 	}else{
@@ -21,7 +21,7 @@ $('#audio').click(function(){
 		if(_boolean == 'true'){
 			$('audio').attr('src','')
 			$(this).attr('src','img/mute.png')
-			sessionStorage.setItem('music','fales')
+			sessionStorage.setItem('music','false')
 		}else{
 			$('audio').attr('src',audioSrc)
 			$(this).attr('src','img/play.png')
@@ -30,7 +30,7 @@ $('#audio').click(function(){
 	}else{
 		$('audio').attr('src','')
 		$(this).attr('src','img/mute.png')
-		sessionStorage.setItem('music','fales')
+		sessionStorage.setItem('music','false')
 	}
 })
 function appendElement(_this,val,bool){

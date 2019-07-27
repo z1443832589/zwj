@@ -1,6 +1,9 @@
 @import url("identity.css");
-#app img {
+#app img.jingHui {
 	width: 2rem;
 	left: calc(50% - 1rem);
 	top: 0; 
+}
+#app img.die {
+	top: calc(50% - 2rem);
 }

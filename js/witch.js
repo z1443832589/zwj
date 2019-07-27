@@ -2,7 +2,17 @@ var prophetLife = showIdentity('witch')
 $('li').click(function(){
 	clickLi($(this),"yao",'兄弟，别点自己啊！','这个人已经出局了，解药和毒药都没用了，就别点啦！')
 })
-
+for(let i in data){
+	if(data[i].identity == 'witch'){
+		var a = parseInt(i);
+		if(data[i].duyao == 0){
+			$('input[value="1"]').attr('disabled','disabled')
+		}
+		if(data[i].jieyao == 0){
+			$('input[value="2"]').attr('disabled','disabled')
+		}
+	}
+}
 $('.sure').click(function(){
 	var bool = true;
 	var val=$('input:radio[name="move"]:checked').val();
@@ -35,3 +45,5 @@ $('.sure').click(function(){
 if(prophetLife == 0){
 	disabledSure()
 }
+// data[3].duyao = 0;
+// localStorage.setItem('dataPeople',JSON.stringify(data))

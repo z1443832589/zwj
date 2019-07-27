@@ -9,7 +9,7 @@ $('.sure').click(function(){
 			if($('li').eq(i).children('img').last().attr('class') == 'sha'){
 				disabledSure()
 				var day = dataTime.day;
-				if(localStorage.getItem('dataPlay')){
+				if(dataTime.day > 1){
 					var dataPlay = JSON.parse(localStorage.getItem('dataPlay'))
 					dataPlay[day-1] = ({
 						werewolf:i+1,
@@ -17,7 +17,7 @@ $('.sure').click(function(){
 						duyao:0,
 						jieyao:0,
 						guard:0,
-						paio:0
+						piao:0
 					})
 				}else{
 					var dataPlay = [];
@@ -27,7 +27,7 @@ $('.sure').click(function(){
 						duyao:0,
 						jieyao:0,
 						guard:0,
-						paio:0
+						piao:0
 					})
 				}
 				
