@@ -11,7 +11,6 @@ $('.sure').click(function(){
 				var day = dataTime.day;
 				dataPlay[day-1].guard = i+1;
 				localStorage.setItem('dataPlay',JSON.stringify(dataPlay))
-				dataChange()
 				bool = true;
 				break;
 			}
@@ -27,6 +26,9 @@ $('.sure').click(function(){
 if(prophetLife == 0){
 	disabledSure()
 }
+$('.return').click(function(){
+	dataChange()
+})
 function dataChange(){
 	var sha = dataPlay[day-1].werewolf-1;
 	var duyao = dataPlay[day-1].duyao-1;
@@ -50,10 +52,9 @@ function dataChange(){
 	if(guard >= 0){
 		data[guard].life = 1;
 	}
-	console.log(guard)
 	localStorage.setItem('dataPeople',JSON.stringify(data))
 }
-// jingZhang = 4;
+// jingZhang = 5;
 // localStorage.setItem('jingZhang',jingZhang)
 // dataPlay[3].werewolf = 1
 // localStorage.setItem('dataPlay',JSON.stringify(dataPlay))

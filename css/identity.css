@@ -50,3 +50,6 @@
 	left: calc(50% - 1rem);
 	top: 0;
 }
+#app img.die{
+	top: 2rem;
+}

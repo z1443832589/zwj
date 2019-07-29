@@ -118,7 +118,7 @@ li.witch,div.witch{
 	background: rgba(0,0,0,.3);
 }
 .popout{
-	position: absolute;
+	position: fixed;
 	background: #fff;
 	width: 80%;
 	height: 6rem;
