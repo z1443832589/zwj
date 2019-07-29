@@ -28,6 +28,18 @@ if(prophetLife == 0){
 }
 $('.return').click(function(){
 	dataChange()
+	var ping = result('ping')
+	var shen = result('shen')
+	var lang = result('lang')
+	if(ping == 3 || shen == 3){
+		localStorage.setItem('victory','lang')
+		location.href = 'result.html';
+	}else if(lang == 3){
+		localStorage.setItem('victory','hao')
+		location.href = 'result.html';
+	}else{
+		location.href = 'playGame.html';
+	}
 })
 function dataChange(){
 	var sha = dataPlay[day-1].werewolf-1;
