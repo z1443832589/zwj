@@ -35,6 +35,7 @@ if(!isNaN(parseInt(jingZhang))){
 		localStorage.setItem('jingZhang',jingZhang)
 	}
 }
+jingZhang = localStorage.getItem('jingZhang')
 if(jingZhang == 'false' && jingHui == 'true' || nextDay != 'true'  && jingHui == 'true'){
 	$('[name="jingHui"]').parent('li').remove()
 	$('.am').prepend('<li><a href="javascript:;" name="jingHui" data-name="jingHui">警徽选择</a></li>')

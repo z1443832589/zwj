@@ -11,7 +11,10 @@ for(var i = 0;i < dataPlay.length;i++){
 	var jie = dataPlay[i].jieyao;
 	var g= dataPlay[i].guard;
 	var piao = dataPlay[i].piao;
-	if(jie != w && g != w){
+	if(jie != w && g != w && du > 0 && g != du){
+		$('.log div').eq(i).append('<p>'+w+'号死亡，原因被狼杀')
+		$('.log div').eq(i).append('<p>'+du+'号死亡，原因被女巫毒死')
+	}else if(jie != w && g != w){
 		$('.log div').eq(i).append('<p>'+w+'号死亡，原因被狼杀')
 	}else if(du > 0 && g != du){
 		$('.log div').eq(i).append('<p>'+du+'号死亡，原因被女巫毒死')
