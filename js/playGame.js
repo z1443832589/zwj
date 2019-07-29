@@ -6,7 +6,9 @@ if(dataTime.schedule > 4 && dataTime.schedule <= 5){
 	var du = dataPlay[day-1].duyao;
 	var jie = dataPlay[day-1].jieyao;
 	var g= dataPlay[day-1].guard;
-	if(jie != w && g != w){
+	if(jie != w && g != w && du > 0 && g != du){
+		popout('昨晚'+w+'号和'+du+'号死亡')
+	}else if(jie != w && g != w){
 		popout('昨晚'+w+'号死亡')
 	}else if(du > 0 && g != du){
 		popout('昨晚'+du+'号死亡')
