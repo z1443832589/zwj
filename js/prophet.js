@@ -11,6 +11,19 @@ for(var i = 0;i <  Object.keys(dataPlay).length;i++){
 	}
 	$('li').eq(qianShenfen).addClass(shenfen)
 }
+var a1,a2 = 0
+for(var i = 0;i < $('li').length;i++){
+	
+	if($('li').eq(i).children('img').length < 2 && $('li').eq(i).children('img').attr('class') != 'die'){
+		a1++;
+		if(!$('li').eq(i).children('img').attr('class')){
+			a2++
+		}
+	}
+}
+if(a1 == a2){
+		disabledSure();
+	}
 $('.sure').click(function(){
 	var bool = true;
 	for (var i = 0;i < $('li').length;i++) {

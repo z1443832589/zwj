@@ -11,24 +11,10 @@ for(let i in data){
 		}
 		if(data[i].jieyao == 0){
 			$('input[value="2"]').attr('disabled','disabled')
-		}else{
-			// alert('昨晚'+dataPlay[day-1].werewolf+'号死了')
+		}else if(data[i].life != 0){
 			popout('昨晚'+dataPlay[day-1].werewolf+'号死了')
 		}
 	}
-}
-function popout(text){
-	var time = null
-	$('body').append('<div class="hei"></div>')
-	$('body').append('<div class="popout"><p>'+text+'</p><button class="popout-btn">确定</button></div>')
-	$('.popout').animate({'top':'1rem'},300)
-	$('.popout-btn').click(function(){
-		$('.popout').animate({'top':'-6rem'},300)
-		time = setTimeout(function(){
-			$('.popout').remove()
-			$('.hei').remove()
-		},301)
-	})
 }
 $('.sure').click(function(){
 	var bool = true;

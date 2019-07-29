@@ -1,12 +1,15 @@
 var a = 1;
 var audioSrc = $('audio').attr('src')
-var _boolean = sessionStorage.getItem('music')
+var _boolean = localStorage.getItem('music')
 var data= JSON.parse(localStorage.getItem('dataPeople'))
 var dataTime = JSON.parse(localStorage.getItem('dataTime'))
 var dataPlay = JSON.parse(localStorage.getItem('dataPlay'))
 var jingZhang = localStorage.getItem('jingZhang')
 var jingHui = localStorage.getItem('jingHui')
 var nextDay = localStorage.getItem('nextDay')
+if(dataTime){
+	var day = dataTime.day;
+}
 $(document).ready(function(){
 	if(_boolean == 'false'){
 		$('audio').attr('src','')
@@ -18,20 +21,20 @@ $(document).ready(function(){
 })
 $('#audio').click(function(){
 	if(_boolean){
-		_boolean = sessionStorage.getItem('music')
+		_boolean = localStorage.getItem('music')
 		if(_boolean == 'true'){
 			$('audio').attr('src','')
 			$(this).attr('src','img/mute.png')
-			sessionStorage.setItem('music','false')
+			localStorage.setItem('music','false')
 		}else{
 			$('audio').attr('src',audioSrc)
 			$(this).attr('src','img/play.png')
-			sessionStorage.setItem('music','true')
+			localStorage.setItem('music','true')
 		}
 	}else{
 		$('audio').attr('src','')
 		$(this).attr('src','img/mute.png')
-		sessionStorage.setItem('music','false')
+		localStorage.setItem('music','false')
 	}
 })
 function appendElement(_this,val,bool){
@@ -106,4 +109,18 @@ function disabledSure(){
 	$('.sure').addClass('disabled-btn');
 	$('.return').removeClass('disabled-btn');
 	$('.return').removeAttr('disabled')
+}
+function popout(text){
+	console.log(1)
+	var time = null
+	$('body').append('<div class="hei"></div>')
+	$('body').append('<div class="popout"><p>'+text+'</p><button class="popout-btn">确定</button></div>')
+	$('.popout').animate({'top':'1rem'},300)
+	$('.popout-btn').click(function(){
+		$('.popout').animate({'top':'-6rem'},300)
+		time = setTimeout(function(){
+			$('.popout').remove()
+			$('.hei').remove()
+		},301)
+	})
 }

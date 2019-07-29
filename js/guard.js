@@ -11,6 +11,7 @@ $('.sure').click(function(){
 				var day = dataTime.day;
 				dataPlay[day-1].guard = i+1;
 				localStorage.setItem('dataPlay',JSON.stringify(dataPlay))
+				dataChange()
 				bool = true;
 				break;
 			}
@@ -26,3 +27,35 @@ $('.sure').click(function(){
 if(prophetLife == 0){
 	disabledSure()
 }
+function dataChange(){
+	var sha = dataPlay[day-1].werewolf-1;
+	var duyao = dataPlay[day-1].duyao-1;
+	var jieyao = dataPlay[day-1].jieyao-1;
+	var guard = dataPlay[day-1].guard-1;
+	var witch = 0;
+	for(var i = 0;i < Object.keys(data).length;i++){
+		if(data[i].identity == 'witch'){
+			witch = i;
+		}
+	}
+	data[sha].life = 0;
+	if(duyao >= 0){
+		data[duyao].life = 0;
+		data[witch].duyao = 0;
+	}
+	if(jieyao >= 0){
+		data[jieyao].life = 1;
+		data[witch].jieyao = 0;
+	}
+	if(guard >= 0){
+		data[guard].life = 1;
+	}
+	console.log(guard)
+	localStorage.setItem('dataPeople',JSON.stringify(data))
+}
+// jingZhang = 4;
+// localStorage.setItem('jingZhang',jingZhang)
+// dataPlay[3].werewolf = 1
+// localStorage.setItem('dataPlay',JSON.stringify(dataPlay))
+// data[1].life = 0;
+// localStorage.setItem('dataPeople',JSON.stringify(data))

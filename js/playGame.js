@@ -1,6 +1,19 @@
 $('.header img:first-child').on('touchend',function(){
 	location.href="deal.html"
 })
+if(dataTime.schedule > 4 && dataTime.schedule <= 5){
+	var w = dataPlay[day-1].werewolf;
+	var du = dataPlay[day-1].duyao;
+	var jie = dataPlay[day-1].jieyao;
+	var g= dataPlay[day-1].guard;
+	if(jie != w && g != w){
+		popout('昨晚'+w+'号死亡')
+	}else if(du > 0 && g != du){
+		popout('昨晚'+du+'号死亡')
+	}else{
+		popout('今晚是平安夜')
+	}
+}
 $('a').click(function(){
 	if($(this).attr('href') == 'javascript:;'){
 		$(this).nextAll().toggle()
@@ -20,9 +33,6 @@ if(!isNaN(parseInt(jingZhang))){
 		localStorage.setItem('jingZhang',jingZhang)
 	}
 }
-if(dataTime.day > 1){
-	$('[name="jingzhang"]').parent('li').remove()
-}
 if(jingZhang == 'false' && jingHui == 'true' || nextDay != 'true'  && jingHui == 'true'){
 	$('[name="jinghui"]').parent('li').remove()
 	$('.am').prepend('<li><a href="javascript:;" name="jinghui" data-name="jinghui">警徽选择</a></li>')
@@ -31,6 +41,12 @@ if(jingZhang == 'false' && jingHui == 'true' || nextDay != 'true'  && jingHui ==
 	$('.am').prepend('<li><a href="javascript:;" name="jinghui" data-name="jinghui">警徽选择</a></li>')
 }else{
 	$('[name="jinghui"]').parent('li').remove()
+}
+if(dataTime.day > 1){
+	$('[name="jingzhang"]').parent('li').remove()
+}else{
+	$('[name="jingzhang"]').parent('li').remove()
+	$('.am').prepend('<li><a href="javascript:;" name="jingzhang">竞选警长</a></li>')
 }
 if(jingHui == 'false'){
 	$('[name="fayan"]').parent('li').remove();

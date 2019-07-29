@@ -11,15 +11,16 @@ for(var i = 0;i < dataPlay.length;i++){
 	var jie = dataPlay[i].jieyao;
 	var g= dataPlay[i].guard;
 	var piao = dataPlay[i].piao;
-	console.log(g != w)
 	if(jie != w && g != w){
 		$('.log div').eq(i).append('<p>'+w+'号死亡，原因被狼杀')
-	}else if(du > 0){
+	}else if(du > 0 && g != du){
 		$('.log div').eq(i).append('<p>'+du+'号死亡，原因被女巫毒死')
 	}else{
 		$('.log div').eq(i).append('<p>今晚是平安夜</p>')
 	}
-	$('.log div').eq(i).append('<p>'+piao+'号出局，原因被票出去')
+	if(piao > 0){
+		$('.log div').eq(i).append('<p>'+piao+'号出局，原因被票出去')
+	}
 }
 function removeData(){
 	localStorage.removeItem('jingHui')

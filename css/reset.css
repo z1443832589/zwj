@@ -108,3 +108,37 @@ li.werewolf,div.werewolf{
 li.witch,div.witch{
 	background-image: url(../img/witch.jpg) !important;
 }
+.hei{
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0,0,0,.3);
+}
+.popout{
+	position: absolute;
+	background: #fff;
+	width: 80%;
+	height: 6rem;
+	z-index: 11;
+	top: -6rem;
+	left: 2.2rem;
+	border-radius: 0.625rem;
+	text-align: center;
+}
+.popout p{
+	font-size: 1.2rem;
+	margin-top: 1rem;
+}
+.popout button{
+	background: #007AFF;
+	border: none;
+	border-radius: 0.3125rem;
+	color: white;
+	width: 4rem;
+	height: 2rem;
+	box-shadow: 1px 1px 2px #666666;
+	margin-top: 0.625rem;
+}

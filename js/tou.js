@@ -37,32 +37,8 @@ $('.sure').click(function(){
 	}
 })
 function dataChange(){
-	var day = dataTime.day;
-	var sha = dataPlay[day-1].werewolf-1;
-	var duyao = dataPlay[day-1].duyao-1;
-	var jieyao = dataPlay[day-1].jieyao-1;
 	var piao = dataPlay[day-1].piao-1;
-	var guard = dataPlay[day-1].guard-1;
 	var witch = 0;
-	for(var i = 0;i < Object.keys(data).length;i++){
-		if(data[i].identity == 'witch'){
-			witch = i;
-		}
-	}
-	data[sha].life = 0;
-	console.log(data)
-	if(duyao >= 0){
-		data[duyao].life = 0;
-		data[witch].duyao = 0;
-	}
-	if(jieyao >= 0){
-		data[jieyao].life = 1;
-		data[witch].jieyao = 0;
-	}
-	if(guard>0){
-		data[guard].life = 1;
-	}
-	console.log(data)
 	data[piao].life = 0;
 	localStorage.setItem('dataPeople',JSON.stringify(data))
 }
